@@ -14,6 +14,7 @@ class GetCarImageFromColorSer(serializers.ModelSerializer):
     currency = serializers.CharField(source= 'brochure.carmodel.currency')
     cartype = serializers.CharField(source='brochure.carmodel.cartype.title')
     car_image = serializers.CharField(source='car_image.url')
+    car_id = serializers.IntegerField(source='brochure.carmodel.pk')
     class Meta:
         model = ColorCar
         fields = ['car_image','car_model','price','currency','cartype']
