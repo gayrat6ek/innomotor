@@ -75,14 +75,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'inno',
+        'NAME': 'innomotors',
         'USER':'postgres',
         'HOST':'127.0.0.1',
-        'PASSWORD':1234,
+        'PASSWORD':'1234Ah5678',
         'PORT':'5432',
     }
 }
@@ -123,8 +122,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+import  os
+STATICFILES_DIRS = [
+            '/var/www/website/innomotor/media/',
+                # Add any other directories if necessary
+                ]
+STATIC_ROOT = '/var/www/website/innomotor/static/'
 STATIC_URL = '/static/'
 
 # Default primary key field type
