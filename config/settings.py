@@ -123,12 +123,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_URL = '/var/www/website/innomotor/static/'
-#STATICFILES_DIRS = [
-#            '/var/www/website/innomotor/static/',
-#                # Add any other directories if necessary
-#                ]
-STATIC_ROOT = '/var/www/website/innomotor/static/'
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+STATICFILES_DIRS = (
+  os.path.join(SITE_ROOT, 'static/'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
