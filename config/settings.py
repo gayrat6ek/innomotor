@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cars',
+    "corsheaders",
     'rest_framework',
     'colorfield'
 ]
@@ -87,6 +88,10 @@ DATABASES = {
     }
 }
 
+CORS_ALLOW_HEADERS = [
+    "*",
+]
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
