@@ -54,7 +54,9 @@ class GetFullDataView(generics.RetrieveAPIView):
         brochure_car = Brochure.objects.get(carmodel__id=id)
         car_info['car_model'] = GetFromCarModelSer(carmodel_car).data
         car_info['colors'] = {'brochure':BrochureCarSer(brochure_car).data,'image_color':ColorsCarSer(brochure_car.carcolor.all(),many=True).data}
-
+        similar_query = ColorCar.objects.filter(brochure__carmodel__cartype__id=id).distinct('brochure_id')
+        similar_cars = GetCarImageFromColorSer(similar_query,many=True)
+        car_info['similar'] = similar_cars.data
 
 
         carinfodata =CarInfo.objects.filter(car_model = id)
