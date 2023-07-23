@@ -54,7 +54,7 @@ class CarInfoChild(models.Model):
     imagetext = models.TextField()
     carinfo = models.ForeignKey(CarInfo,on_delete=models.CASCADE,related_name='carchild')
     def __str__(self):
-        return self.title
+        return f"{self.carinfo.car_model.car_model} - {self.title}"
     
 
 
