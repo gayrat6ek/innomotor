@@ -5,7 +5,7 @@ class GetAdvertSerializer(serializers.ModelSerializer):
     car_image = serializers.CharField(source = 'car_image.url')
     class Meta:
         model = CarModel
-        fields = ['pk','car_image','price','currency','car_model','title']
+        fields = ['pk','car_image','price','currency','car_model','title','car_image_mobile']
 
 
 class GetCarImageFromColorSer(serializers.ModelSerializer):

@@ -14,6 +14,7 @@ class CarModel(models.Model):
     title = models.CharField(max_length=200,null=True)
     car_description = models.TextField(null=True)
     car_image = models.ImageField(upload_to='media')
+    car_image_mobile = models.ImageField(upload_to='media')
     price = models.BigIntegerField()
     currency = models.CharField(max_length=244,choices=(('uzs','UZS'),('usd','USD')))
     cartype = models.ForeignKey(TransportType,on_delete=models.CASCADE)
