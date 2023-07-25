@@ -3,6 +3,7 @@ from .models import TransportType,CarInfo,CarInfoChild,CarModel,Brochure,ColorCa
 
 class GetAdvertSerializer(serializers.ModelSerializer):
     car_image = serializers.CharField(source = 'car_image.url')
+    car_image_mobile = serializers.CharField(source='car_image_mobile.url')
     class Meta:
         model = CarModel
         fields = ['pk','car_image','price','currency','car_model','title','car_image_mobile']
