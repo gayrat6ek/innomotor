@@ -30,6 +30,7 @@ class CarTypeSerializer(serializers.ModelSerializer):
 
 class GetFromCarModelSer(serializers.ModelSerializer):
     car_image =serializers.CharField(source='car_image.url')
+    car_image_mobile = serializers.CharField(source='car_image_mobile.url')
     class Meta:
         model = CarModel
         fields = ['pk','title','car_model','car_description','car_image']
